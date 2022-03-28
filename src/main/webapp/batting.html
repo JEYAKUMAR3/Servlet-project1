@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Jekyll v4.1.1">
+<title></title>
+
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+<!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="signup.css " rel="stylesheet">
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.form-signin input {
+	margin-top: 10px;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+<!-- Custom styles for this template -->
+<link href="signup.css" rel="stylesheet">
+
+</head>
+<body class="text-center">
+	<form class="form-teams" action="Secondbat" method="post">
+		<img class="mb-4" src="assets/brand/bootstrap-solid.svg" alt=""
+			width="72" height="72"> <label for="inputTeams" class="sr-only">Second
+			batting score</label> <input type="text" id="input-1" class="form-control"
+			placeholder="Player name" required autofocus name="player_name1">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs1"> <input
+			type="text" id="input-2" class="form-control"
+			placeholder="Player name" required autofocus name="player_name2">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs2"> <input
+			type="text" id="input-3" class="form-control"
+			placeholder="Player name" required autofocus name="player_name3">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs3"> <input
+			type="text" id="input-4" class="form-control"
+			placeholder="Player name" required autofocus name="player_name4">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs4"> <input
+			type="text" id="input-5" class="form-control"
+			placeholder="Player name" required autofocus name="player_name5">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs5"> <input
+			type="text" id="input-6" class="form-control"
+			placeholder="Player name" required autofocus name="player_name6">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs6"> <input
+			type="text" id="input-7" class="form-control"
+			placeholder="Player name" required autofocus name="player_name7">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs7"> <input
+			type="text" id="input-8" class="form-control"
+			placeholder="Player name" required autofocus name="player_name8">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs8"> <input
+			type="text" id="input-9" class="form-control"
+			placeholder="Player name" required autofocus name="player_name9">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs9"> <input
+			type="text" id="input-10" class="form-control"
+			placeholder="Player name" required autofocus name="player_name10">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs10"> <input
+			type="text" id="input-11" class="form-control"
+			placeholder="Player name" required autofocus name="player_name11">
+		<input type="number" id="input" class="form-control"
+			placeholder="Runs" required autofocus name="runs11">
+
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Enter</button>
+	</form>
+
+	<script>
+	document.addEventListener("DOMContentLoaded", async()=>{
+		var data = await fetch("http://localhost:8080/Email/Fetch2",{method:"POST"});
+		result = await data.json();
+		console.log("result"+result);
+		//printimg(result);
+		result.forEach(printimg);
+	});
+	function printimg(ans){
+		console.log("ans"+ans);
+		var count = 1;
+		for(let i = 0;i < ans.length; i++){
+			var ten = document.getElementById("input-"+count);
+			count++;
+			ten.value = ans[i];
+		}
+	}
+	</script>
+</body>
+</html>
